@@ -8,3 +8,13 @@ body, html {
     box-sizing: border-box;
     height: 100vh;
 }
+
+.btn {
+    padding: 10px;
+    background: red;
+    border: none;
+    border-radius: 27px;
+    color: white;
+    width: 13%;
+    text-align: center;
+}
