@@ -1,0 +1,11 @@
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+}
+
+#footer > h2 {
+    text-align: center;
+}

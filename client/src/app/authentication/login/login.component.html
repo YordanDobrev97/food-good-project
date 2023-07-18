@@ -1,5 +1,5 @@
 
-<div class="login-container">
+<div class="auth-container">
     <div class="row">
         <i class="fa-solid fa-user"></i>
         <input type="text" placeholder="Your username..." />
@@ -11,6 +11,11 @@
     </div>
 
     <div class="row">
-        <button id="login-btn">Submit</button>
+        <button id="submit-btn">Submit</button>
     </div>
+
+    <p class="create-account-message">
+        Don't have an account?
+        <a [routerLink]="['/register']">Register</a>
+    </p>
 </div>
