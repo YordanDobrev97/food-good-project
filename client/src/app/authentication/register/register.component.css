@@ -3,3 +3,7 @@
 .auth-container {
     height: 35%;
 }
+
+#submit-btn {
+    cursor: pointer;
+}

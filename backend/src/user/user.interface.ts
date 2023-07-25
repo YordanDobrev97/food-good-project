@@ -3,3 +3,8 @@ export interface IUser {
     password: string,
     profileImage: string
 }
+
+export interface AuthUser {
+    username: string,
+    password: string,
+}

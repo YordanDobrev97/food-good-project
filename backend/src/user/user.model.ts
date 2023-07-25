@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model, Model } from 'mongoose'
 import { IUser } from './user.interface'
 
 const userSchema = new Schema<IUser>({
@@ -7,5 +7,18 @@ const userSchema = new Schema<IUser>({
     profileImage: String,
 })
 
-const userModel = model<IUser>('User', userSchema)
-export default userModel
+export class UserModel {
+    private model: Model<IUser>
+
+    constructor() {
+        this.model = model<IUser>('User', userSchema)
+    }
+  
+    async create(user: IUser): Promise<IUser> {
+      return (await this.model.create(user)).save()
+    }
+  
+    async findById(id: string): Promise<IUser | null> {
+      return await this.model.findById(id).exec()
+    }
+}
