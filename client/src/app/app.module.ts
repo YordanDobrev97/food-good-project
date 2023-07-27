@@ -15,13 +15,12 @@ import { provideToastr } from 'ngx-toastr'
 import { ToastrModule } from 'ngx-toastr'
 import { LoginComponent } from './authentication/login/login.component'
 import { RegisterComponent } from './authentication/register/register.component'
+import { AuthenticationModule } from './authentication/authentication.module'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    LoginComponent,
-    RegisterComponent,
     HeaderComponent,
     FooterComponent,
     MainComponent,
@@ -31,6 +30,7 @@ import { RegisterComponent } from './authentication/register/register.component'
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
+    AuthenticationModule,
     ToastrModule.forRoot()
   ],
   providers: [

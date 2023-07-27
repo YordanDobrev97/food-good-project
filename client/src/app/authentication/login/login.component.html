@@ -2,16 +2,16 @@
 <div class="auth-container">
     <div class="row">
         <i class="fa-solid fa-user"></i>
-        <input type="text" placeholder="Your username..." />
+        <input #username type="text" placeholder="Your username..." />
     </div>
 
     <div class="row">
         <i class="fa-solid fa-lock"></i>
-        <input type="password" placeholder="Your password.."/>
+        <input #password type="password" placeholder="Your password.."/>
     </div>
 
     <div class="row">
-        <button id="submit-btn">Submit</button>
+        <button (click)="login(username, password)" id="submit-btn">Submit</button>
     </div>
 
     <p class="create-account-message">

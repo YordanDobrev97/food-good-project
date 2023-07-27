@@ -7,6 +7,7 @@
     background: #ac2a2a;
     color: white;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .auth-container {

@@ -7,11 +7,29 @@ import jwtUtils from '../utils/jwt'
 export class UserController {
   async createUser(req: Request, res: Response, next: NextFunction) {
     console.log(`post: ${userPrefix}/createUser`)
-    console.log(req.body)
     const { username, password } = req.body
-    await UserService.createUser(username, password)
-    const jwt = jwtUtils.generateJwt({ username, password, profileImage: '' })
+    const user = await UserService.createUser(username, password)
+    const jwt = jwtUtils.generateJwt({ id: user._id, username, password, profileImage: '' })
     res.json(jwt)
+  }
+
+  async login(req: Request, res: Response, next: NextFunction) {
+    console.log(`post: ${userPrefix}/login`)
+    const { username, password } = req.body
+
+    const user = await UserService.login(username, password)
+    console.log(user, 'user >>')
+    if (user) {
+      const token = jwtUtils.generateJwt(
+        {
+          id: user._id,
+          username: user.username,
+          password: user.password,
+          profileImage: user.profileImage
+        });
+      return res.json(token)
+    }
+    res.json({ error: 'Invalid credentials' }).status(400)
   }
 
   async getUsers(req: Request, res: Response, next: NextFunction) {

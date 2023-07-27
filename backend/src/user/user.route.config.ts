@@ -13,9 +13,10 @@ export class UserRoutes extends RouteConfig {
   }
 
   configureRoutes() {
-    console.log('call')
     this.app.route(`/${userPrefix}?id/:id`).get([this.userController.getUsers])
+
     this.app.route(`/${userPrefix}/create`).post([this.userController.createUser])
+    this.app.route(`/${userPrefix}/login`).post([this.userController.login])
 
     return this.app
   }

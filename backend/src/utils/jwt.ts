@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken'
 const JWT_SECRET = 'VERY_SECRET_JWT_TOKEN'
 
 interface UserData {
+    id: string,
     username: string,
     password: string,
     profileImage: string

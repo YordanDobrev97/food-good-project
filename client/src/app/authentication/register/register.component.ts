@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 import { ToastrService } from 'ngx-toastr'
-import { AuthenticationService } from 'src/app/authentication.service'
+import { AuthenticationService } from '../authentication.service'
 
 @Component({
   selector: 'app-register',
