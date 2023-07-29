@@ -40,3 +40,11 @@
 .create-account-message {
     text-align: right;
 }
+
+
+@media screen and (max-widtH: 740px) {
+    .auth-container {
+        width: 87%;
+        height: 30%;
+    }
+}

@@ -4,6 +4,7 @@ import { AuthenticationService } from './authentication.service'
 import { LoginComponent } from './login/login.component'
 import { RegisterComponent } from './register/register.component'
 import { RouterModule } from '@angular/router';
+import { AuthenticationRoutingModule } from './authentication.routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    AuthenticationRoutingModule
   ],
   providers: [AuthenticationService],
   exports: [LoginComponent, RegisterComponent]

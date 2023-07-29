@@ -18,9 +18,13 @@ export class LoginComponent {
   async login(username: HTMLInputElement, password: HTMLInputElement) {
     this.authService.login(username.value, password.value)
       .subscribe((response) => {
-        console.log(response)
-        if (response.user) {
+        if (response) {
+          localStorage.setItem('jwt', response)
+          this.toastr.success('Succesfully logged in')
 
+          setTimeout(() => {
+            this.router.navigate(['/'])
+          }, 3000)
         }
       })
   }

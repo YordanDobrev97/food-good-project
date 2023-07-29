@@ -34,6 +34,6 @@ export class AuthenticationService {
       password
     }
 
-    return this.http.post<LoginUser>(`${this.api}/login`, data)
+    return this.http.post<string>(`${this.api}/login`, data)
   }
 }
