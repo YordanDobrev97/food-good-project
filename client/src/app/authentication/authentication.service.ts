@@ -15,6 +15,7 @@ interface LoginUser {
 })
 export class AuthenticationService {
   private api = `http://localhost:4000/api/users`
+  public isLogged: boolean = false
 
   constructor(private http: HttpClient) {
   }
@@ -35,5 +36,9 @@ export class AuthenticationService {
     }
 
     return this.http.post<string>(`${this.api}/login`, data)
+  }
+
+  isLoggedUser(){
+    return this.isLogged || localStorage.getItem('jwt') ? true : false
   }
 }

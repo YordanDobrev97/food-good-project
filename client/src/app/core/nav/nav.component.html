@@ -20,16 +20,28 @@
       <li>
         <a [routerLink]="['/products/all']">Products</a>
       </li>
-      <li>Contact</li>
-      <li id="login">
-        <a [routerLink]="['/auth/login']">Login</a>
-      </li>
-      <li id="myProfile">
-        <a [routerLink]="['/myProfile']">MyProfile</a>
-      </li>
-      <li id="logout">
-        <a [routerLink]="['/logout']">LogOut</a>
-      </li>
+
+      <ng-container *ngIf="isLogged()">
+        <li>
+          <a [routerLink]="['/products/menu']">Menu</a>
+        </li>
+
+        <li id="myProfile">
+          <a [routerLink]="['/myProfile']">MyProfile</a>
+        </li>
+
+        <li id="logout">
+          <a [routerLink]="['/logout']">LogOut</a>
+        </li>
+      </ng-container>
+
+      <ng-container *ngIf="!isLogged()">
+        <li>Contact</li>
+
+        <li id="login">
+          <a [routerLink]="['/auth/login']">Login</a>
+        </li>
+      </ng-container>
     </ul>
   </div>
 </nav>
