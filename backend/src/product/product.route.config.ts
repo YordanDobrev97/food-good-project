@@ -1,0 +1,21 @@
+import { RouteConfig } from '../common/common.route.config'
+import { Application } from 'express'
+import { ProductController  } from './product.controller'
+import { productPrefix } from '../constants/apiPrefix'
+
+export class ProductRoutes extends RouteConfig {
+  private productController: ProductController
+
+  constructor(app: Application, productController: ProductController) {
+    super(app, 'ProductRoutes')
+    this.productController = productController
+    this.configureRoutes()
+  }
+
+  configureRoutes() {
+    this.app.route(`/${productPrefix}/create`).post([this.productController.create])
+    this.app.route(`/${productPrefix}/test`).get([this.productController.test])
+
+    return this.app
+  }
+}
