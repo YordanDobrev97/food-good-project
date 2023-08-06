@@ -12,6 +12,11 @@ export class ProductController {
         res.json(product)
     }
 
+    async all(req: Request, res: Response, next: NextFunction) {
+        const products = await ProductService.all()
+        return res.json(products)
+    }
+
     async test(req: Request, res: Response, next: NextFunction) {
         res.json('test it works')
     }

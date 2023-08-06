@@ -19,4 +19,8 @@ export class ProductModel {
     async create(product: IProduct): Promise<IProduct> {
         return (await this.model.create(product)).save()
     }
+
+    async all() {
+        return (await this.model.find({}, '_id name description imageUrl price'))
+    }
 }

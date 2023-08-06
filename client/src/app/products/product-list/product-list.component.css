@@ -4,6 +4,12 @@
     font-size: 3em;
 }
 
+.product-name {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 22px;
+}
+
 .product-container {
     width: 80%;
     margin: auto;
@@ -12,8 +18,15 @@
     flex-wrap: wrap;
 }
 
+.product-buy {
+    text-align: center;
+    font-size: 20px;
+    color: #ce1212;
+    font-weight: bold;
+}
+
 .product-card {
-    background-color: orange;
+    /* background-color: orange; */
     padding: 18px;
     width: 20%;
     margin: 8px 0;
@@ -21,6 +34,7 @@
 
 .product-image {
     width: 100%;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 740px) {

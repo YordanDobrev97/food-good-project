@@ -14,6 +14,8 @@ export class ProductRoutes extends RouteConfig {
 
   configureRoutes() {
     this.app.route(`/${productPrefix}/create`).post([this.productController.create])
+    this.app.route(`/${productPrefix}/all`).get([this.productController.all])
+
     this.app.route(`/${productPrefix}/test`).get([this.productController.test])
 
     return this.app
