@@ -16,7 +16,8 @@ import { ToastrModule } from 'ngx-toastr'
 import { LoginComponent } from './authentication/login/login.component'
 import { RegisterComponent } from './authentication/register/register.component'
 import { AuthenticationModule } from './authentication/authentication.module'
-import { ProductsModule } from './products/products.module'
+import { ProductsModule } from './products/products.module';
+import { AboutComponent } from './about/about.component'
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ProductsModule } from './products/products.module'
     HeaderComponent,
     FooterComponent,
     MainComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

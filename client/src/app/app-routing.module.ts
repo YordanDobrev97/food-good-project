@@ -5,6 +5,7 @@ import { MainComponent } from './main/main.component'
 import { LoginComponent } from './authentication/login/login.component'
 import { RegisterComponent } from './authentication/register/register.component'
 import { ProductListComponent } from './products/product-list/product-list.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,11 @@ const routes: Routes = [
     component: MainComponent,
     pathMatch: 'full'
   },
+  {
+    path: 'about-us',
+    component: AboutComponent,
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
