@@ -19,6 +19,7 @@ import { AuthenticationModule } from './authentication/authentication.module'
 import { ProductsModule } from './products/products.module';
 import { AboutComponent } from './about/about.component';
 import { CartModule } from './cart/cart.module'
+import { UserModule } from './user/user.module'
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { CartModule } from './cart/cart.module'
     AuthenticationModule,
     ProductsModule,
     CartModule,
+    UserModule,
     ToastrModule.forRoot()
   ],
   providers: [
