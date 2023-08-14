@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from '../authentication.service'
+import { JWT } from '../../utils'
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent {
     this.authService.login(username.value, password.value)
       .subscribe((response) => {
         if (response) {
-          localStorage.setItem('jwt', response)
+          localStorage.setItem(JWT, response)
           this.toastr.success('Succesfully logged in')
 
           setTimeout(() => {

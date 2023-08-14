@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { ProductList } from './interfaces/productList.interface'
+import { ProductDetail } from './interfaces/productDetail.interface'
 
 
 @Injectable({
@@ -14,5 +15,9 @@ export class ProductService {
 
   all() {
     return this.http.get<ProductList[]>(`${this.api}/all`)
+  }
+
+  getById(id: string) {
+    return this.http.get<ProductDetail>(`${this.api}/${id}`)
   }
 }

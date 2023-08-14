@@ -3,7 +3,7 @@
 
 <div class="product-container">
     <div *ngFor="let product of productList" class="product-card">
-        <a [routerLink]="['/product/', product._id]">
+        <a [routerLink]="['/products/', product._id]">
             <img class="product-image" src="{{product.imageUrl}}"/>     
         </a>
         <h3 class="product-name">{{product.name}}</h3>

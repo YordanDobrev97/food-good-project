@@ -1,0 +1,50 @@
+<div id="w">
+  <section>
+    <h1 id="title">Products</h1>
+  </section>
+
+  <div id="page">
+    <table *ngIf="products.length > 0" id="cart">
+      <thead>
+        <tr>
+          <th class="first">Photo</th>
+          <th class="second">Qty</th>
+          <th class="third">Product</th>
+          <th class="fourth">Line Total</th>
+          <th class="fifth">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products" class="productitm">
+          <td>
+            <img src={{product.imageUrl}} class="thumb" /></td>
+          <td>
+            <input type="number" value={{product.quantity}} min="0" max="99" class="qtyinput" />
+          </td>
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency}}</td>
+          <td>
+            <button (click)="removeFromCart(product.id)" class="remove">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+
+        <tr class="totalprice">
+          <td class="light">Total:</td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2"><span class="thick">{{totalPrice | currency}}</span></td>
+        </tr>
+
+        <!-- checkout btn -->
+        <tr class="checkoutrow">
+          <td colspan="5" class="checkout">
+            <button id="submitbtn">Checkout Now!</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p *ngIf="products.length === 0" class="message">There are no products in the shopping cart</p>
+  </div>
+</div>

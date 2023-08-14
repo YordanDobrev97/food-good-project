@@ -2,6 +2,7 @@ import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 import { ToastrService } from 'ngx-toastr'
 import { AuthenticationService } from '../authentication.service'
+import { JWT } from '../../utils'
 
 @Component({
   selector: 'app-register',
@@ -31,7 +32,7 @@ export class RegisterComponent {
         } else {
           this.toastr.success('Succesfully', 'You logged succesfully')
           setTimeout(() => {
-            localStorage.setItem('jwt_user', JSON.stringify(response))
+            localStorage.setItem(JWT, JSON.stringify(response))
             this.router.navigate(['/'])
           }, 3000)
         }

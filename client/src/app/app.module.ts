@@ -17,7 +17,9 @@ import { LoginComponent } from './authentication/login/login.component'
 import { RegisterComponent } from './authentication/register/register.component'
 import { AuthenticationModule } from './authentication/authentication.module'
 import { ProductsModule } from './products/products.module';
-import { AboutComponent } from './about/about.component'
+import { AboutComponent } from './about/about.component';
+import { CartModule } from './cart/cart.module'
+
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { AboutComponent } from './about/about.component'
     HttpClientModule,
     AuthenticationModule,
     ProductsModule,
+    CartModule,
     ToastrModule.forRoot()
   ],
   providers: [

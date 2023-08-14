@@ -31,9 +31,16 @@
         </li>
 
         <li id="logout">
-          <a [routerLink]="['/logout']">LogOut</a>
+          <a (click)="logout()">LogOut</a>
         </li>
       </ng-container>
+
+      <li>
+        <a [routerLink]="['/cart/products']">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <label *ngIf="productsInCart > 0" id="productsCount">{{productsInCart}}</label>
+        </a>
+      </li>
 
       <ng-container *ngIf="!isLogged()">
         <li>Contact</li>
