@@ -5,6 +5,7 @@ const userSchema = new Schema<IUser>({
     username: String,
     password: String,
     profileImage: String,
+    role: String
 })
 
 export class UserModel {
@@ -20,6 +21,10 @@ export class UserModel {
   
     async findById(id: string): Promise<IUser | null> {
       return await this.model.findById(id).exec()
+    }
+
+    async getUser(id: string) {
+      return await this.model.findById(id)
     }
 
     async find(username: string): Promise<IUser> {

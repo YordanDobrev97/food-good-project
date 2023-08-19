@@ -3,6 +3,7 @@ export interface IUser {
     username: string,
     password: string,
     profileImage: string
+    role: string
 }
 
 export interface AuthUser {

@@ -17,6 +17,13 @@ export class ProductController {
         return res.json(products)
     }
 
+    async getById(req: Request, res: Response, next: NextFunction) {
+        const { id } = req.params
+        console.log('id: ', id)
+        const product = await ProductService.getById(id)
+        res.json(product)
+    }
+
     async test(req: Request, res: Response, next: NextFunction) {
         res.json('test it works')
     }

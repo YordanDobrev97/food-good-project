@@ -1,0 +1,191 @@
+<div class="screen flex-center">
+  <div class="popup flex p-lg">
+    <div class="flex-fill flex-vertical">
+      <div class="header flex-between flex-vertical-center">
+        <div class="flex-vertical-center">
+          <i class="ai-bitcoin-fill size-xl pr-sm f-main-color"></i>
+          <span class="title"> <strong>AceCoin</strong><span>Pay</span> </span>
+        </div>
+      </div>
+      <div class="card-data flex-fill flex-vertical">
+        <div class="flex-between flex-vertical-center">
+          <div class="card-property-title">
+            <strong>Card Number</strong>
+            <span>Enter 16-digit card number on the card</span>
+          </div>
+          <div class="f-main-color pointer"><i class="ai-pencil"></i> Edit</div>
+        </div>
+
+        <div class="flex-between">
+          <div class="card-number flex-vertical-center flex-fill">
+            <div class="card-number-field flex-vertical-center flex-fill">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 48 48"
+                width="24px"
+                height="24px"
+              >
+                <path
+                  fill="#ff9800"
+                  d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"
+                />
+                <path
+                  fill="#d50000"
+                  d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"
+                />
+                <path
+                  fill="#ff3d00"
+                  d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"
+                />
+              </svg>
+
+              <input type="number" class="numbers" (input)="onCardInputNumber($event)"/>
+            </div>
+            <i class="ai-circle-check-fill size-lg f-main-color"></i>
+          </div>
+        </div>
+
+        <!-- Expiry Date -->
+        <div class="flex-between">
+          <div class="card-property-title">
+            <strong>Expiry Date</strong>
+            <span>Enter the expiration date of the card</span>
+          </div>
+          <div class="card-property-value flex-vertical-center">
+            <div class="input-container half-width">
+              <input
+                id="month"
+                class="numbers"
+                data-bound="mm_mock"
+                data-def="00"
+                type="number"
+                min="1"
+                max="12"
+                step="1"
+                placeholder="MM"
+                (input)="onExpireInputDate($event)"
+              />
+            </div>
+            <span class="m-md">/</span>
+            <div class="input-container half-width">
+              <input
+                id="year"
+                class="numbers"
+                data-bound="yy_mock"
+                data-def="01"
+                type="number"
+                min="23"
+                max="99"
+                step="1"
+                placeholder="YY"
+                (input)="onExpireInputDate($event)"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- CCV Number -->
+        <div class="flex-between">
+          <div class="card-property-title">
+            <strong>CVC Number</strong>
+            <span>Enter card verification code from the back of the card</span>
+          </div>
+          <div class="card-property-value">
+            <div class="input-container">
+              <input id="cvc" class="card-number-field" (input)="onCvcInputNumber($event)" type="password" />
+              <i
+                id="cvc_toggler"
+                data-target="cvc"
+                class="ai-eye-open pointer"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Name -->
+        <div class="flex-between">
+          <div class="card-property-title">
+            <strong>Cardholder Name</strong>
+            <span>Enter cardholder's name</span>
+          </div>
+          <div class="card-property-value">
+            <div class="input-container">
+              <input
+                id="name"
+                data-bound="name_mock"
+                data-def="Mr. Cardholder"
+                type="text"
+                class="uppercase"
+                placeholder="CARDHOLDER NAME"
+              />
+              <i class="ai-person"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="action flex-center">
+        <button type="submit" (click)="pay()" class="b-main-color pointer">Pay Now</button>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar flex-vertical">
+      <div></div>
+      <div class="purchase-section flex-fill flex-vertical">
+        <div class="card-mockup flex-vertical">
+          <div class="flex-fill flex-between">
+            <i class="ai-bitcoin-fill size-xl f-secondary-color"></i>
+            <i class="ai-wifi size-lg f-secondary-color"></i>
+          </div>
+          <div>
+            <div id="name_mock" class="size-md pb-sm uppercase ellipsis">
+              mr. Cardholder
+            </div>
+            <div class="size-md pb-md">
+              <strong>
+                <span class="pr-sm"> &#x2022;&#x2022;&#x2022;&#x2022; </span>
+                <span id="carddigits_mock">0000</span>
+              </strong>
+            </div>
+            <div class="flex-between flex-vertical-center">
+              <strong class="size-md">
+                <span id="mm_mock">00</span>/<span id="yy_mock">01</span>
+              </strong>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 48 48"
+                width="24px"
+                height="24px"
+              >
+                <path
+                  fill="#ff9800"
+                  d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"
+                />
+                <path
+                  fill="#d50000"
+                  d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"
+                />
+                <path
+                  fill="#ff3d00"
+                  d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separation-line"></div>
+      <div class="total-section flex-between flex-vertical-center">
+        <div class="flex-fill flex-vertical">
+          <div class="total-label f-secondary-color">You have to Pay</div>
+          <div>
+            <strong>{{totalPrice}}</strong>
+            <small><span class="f-secondary-color">USD</span></small>
+          </div>
+        </div>
+        <i class="ai-coin size-lg"></i>
+      </div>
+    </div>
+  </div>
+</div>

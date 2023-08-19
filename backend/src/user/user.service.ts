@@ -7,7 +7,7 @@ export const UserService = {
     createUser: async (username: string, password: string) => {
         const user = new UserModel()
         const hashedPassword = await bcrypt.hash(password, 10)
-        return user.create({ username: username, password: hashedPassword, profileImage: '' })
+        return user.create({ username: username, password: hashedPassword, profileImage: '', role: 'basic' })
     },
     login: async (username: string, password: string): Promise<IUser | null> => {
         const user = new UserModel()

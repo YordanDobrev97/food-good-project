@@ -23,4 +23,8 @@ export class ProductModel {
     async all() {
         return (await this.model.find({}, '_id name description imageUrl price'))
     }
+
+    async getById(id: string) {
+        return ((await this.model.findById(id).lean().exec()))
+    }
 }

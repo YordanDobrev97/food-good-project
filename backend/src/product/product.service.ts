@@ -16,6 +16,17 @@ export const ProductService = {
 
     all: async () => {
         const product = new ProductModel()
-        return product.all()
+        return await product.all()
+    },
+
+    getById: async (id: string) => {
+        const productModel = new ProductModel()
+        const categoryModel = new CategoryModel()
+
+        const product = await productModel.getById(id)
+        const category = await categoryModel.getById((await product).category.toString())
+
+        console.log(product.category)
+        return product
     }
 }

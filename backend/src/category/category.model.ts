@@ -16,6 +16,11 @@ export class CategoryModel {
         return (await this.model.create(category)).save()
     }
 
+    async getById(id: string) {
+        const categoryModel = new CategoryModel()
+        return categoryModel.model.findById(id)
+    }
+
     async getByName(name: string) {
         const category = new CategoryModel()
         return category.model.findOne({ name: name })
