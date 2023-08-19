@@ -20,6 +20,12 @@ export class OrderController {
         res.json(product)
     }
 
+    async getAll(req: Request, res: Response, next: NextFunction) {
+        const { id } = req.params
+        const orders = await OrderService.getAll(id)
+        res.json(orders)
+    }
+
     // async all(req: Request, res: Response, next: NextFunction) {
     //     const products = await ProductService.all()
     //     return res.json(products)

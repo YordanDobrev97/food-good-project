@@ -24,6 +24,13 @@ export const OrderService = {
             totalPrice: data.totalPrice,
         })
         return order
+    },
+
+    getAll: async (userId: string) => {
+        const orderModel = new OrderModel()
+        const orders = await orderModel.all(userId)
+        //const products = productModel.getById()
+        return orders
     }
 
     // create: async (data: IOrder) => {

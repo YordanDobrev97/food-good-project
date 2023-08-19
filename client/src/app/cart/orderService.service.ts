@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { IOrder } from './interfaces/order.interface'
+import { UserOrder } from './interfaces/userOrder.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,10 @@ export class OrderService {
 
   create(order: IOrder) {
     return this.http.post<IOrder>(`${this.api}/create`, order);
+  }
+
+  getAll(userId: string) {
+    return this.http.get<UserOrder[]>(`${this.api}/${userId}`)
   }
 
   remove(id: string) {

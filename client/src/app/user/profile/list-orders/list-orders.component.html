@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-body">
+    <div class="top-status">
+      <h5>ORDERS</h5>
+
+      <ul *ngFor="let order of orders">
+        <li>
+          <p>Order ID: {{order._id}}</p>
+          <p>Status: {{order.status}}</p>
+
+          <p>Products:</p>
+          <ul *ngFor="let product of order.products">
+            <h4>Product - {{product.name}}</h4>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

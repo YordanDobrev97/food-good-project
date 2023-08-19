@@ -16,6 +16,8 @@ export class OrderRoutes extends RouteConfig {
     //this.app.route(`/${userPrefix}?id/:id`).get([this.userController.getUsers])
 
     this.app.route(`/${orderPrefix}/create`).post([this.orderController.create])
+    this.app.route(`/${orderPrefix}/:id`).get([this.orderController.getAll])
+
     this.app.route(`/${orderPrefix}/test`).get([this.orderController.test])
 
     return this.app
