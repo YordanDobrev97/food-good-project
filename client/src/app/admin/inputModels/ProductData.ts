@@ -1,8 +1,7 @@
-export interface CreateProductModel {
+export interface ProductData {
     name: string,
     description: string,
     imageUrl: string,
-    price: number,
     category: {
         name: string
     }

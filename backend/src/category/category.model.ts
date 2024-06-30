@@ -1,7 +1,7 @@
 import { Model, Schema, model } from 'mongoose'
 import { ICategory } from './category.interface'
 
-const categorySchema = new Schema<ICategory>({
+export const categorySchema = new Schema<ICategory>({
     name: String,
 })
 
@@ -14,6 +14,10 @@ export class CategoryModel {
 
     async create(category: ICategory) {
         return (await this.model.create(category)).save()
+    }
+
+    async getAll() {
+        return (await this.model.find())
     }
 
     async getById(id: string) {

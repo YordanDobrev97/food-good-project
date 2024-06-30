@@ -8,7 +8,7 @@
     <ul id="menu">
       <li id="logo-li">
         <a [routerLink]="['']">
-          <img width="100" height="100" src="https://img.freepik.com/free-vector/restaurant-logo-editorial-template_23-2148701251.jpg?w=740&t=st=1688907439~exp=1688908039~hmac=7c051cd693116483f5a6faf02470a262c7dd33b0818eca5dbe112b6ec336373e"/>
+          <img width="100" height="100" src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/orange_travelpictdinner_1484336833.png"/>
         </a>
       </li>
       <li>
@@ -20,14 +20,17 @@
       <li>
         <a [routerLink]="['/products/all']">Products</a>
       </li>
+      <li>
+        <a [routerLink]="['/menu']">Menu</a>
+      </li>
 
       <ng-container *ngIf="isLogged()">
-        <li>
-          <a>Menu</a>
-        </li>
-
         <li id="myProfile">
           <a [routerLink]="['/user/profile']">MyProfile</a>
+        </li>
+
+        <li id="admin">
+          <a [routerLink]="['/admin']">Administration</a>
         </li>
 
         <li id="logout">

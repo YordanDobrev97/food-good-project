@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="title">
+      <h2>Add new product</h2>
+    </div>
+    <div class="d-flex">
+      <div class="form">
+        <label>
+          <span class="name">Name<span class="required">*</span></span>
+          <input type="text" name="name" #name>
+        </label>
+        <label>
+          <span class="description">Description<span class="required">*</span></span>
+          <input type="text" name="description" #description>
+        </label>
+        <label>
+          <span class="imageUrl">Image Url<span class="required">*</span></span>
+          <input type="text" name="imageUrl" #imageUrl>
+        </label>
+  
+        <label>
+          <span class="category">Category<span class="required">*</span></span>
+          <select (change)="onCategoryChange($event)">
+            <option value="Category 1">Category 1</option>
+            <option value="new">New category</option>
+          </select>
+        </label>
+  
+        <label *ngIf="isNewCategory">
+            <span class="category">New Category<span class="required">*</span></span>
+            <input type="text" name="newCategory" [(ngModel)]="newCategory">
+          </label>
+  
+        <div class="row">
+          <button (click)="create(name, description, imageUrl, isNewCategory ? newCategory : selectedCategory)">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

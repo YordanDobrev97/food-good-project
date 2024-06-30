@@ -10,6 +10,12 @@ export const CategoryService = {
         return existCategory
     },
 
+    getAll() {
+        const categoryModel = new CategoryModel()
+        const categories = categoryModel.getAll()
+        return categories
+    },
+
     getByName(name: string) {
         const category = new CategoryModel()
         return category.getByName(name)
